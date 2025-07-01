@@ -1,95 +1,102 @@
+"use client";
+import React from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styled from "styled-components";
+import Container from "../components/ui/Container";
+
+const HeroSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: ${({ theme }) => theme.colors.surface.bright};
+  padding: ${({ theme }) => theme.spacing(6)} 0 ${({ theme }) => theme.spacing(4)} 0;
+  text-align: center;
+  box-shadow: ${({ theme }) => theme.elevation.level1};
+  width: 80vw;
+  max-width: 1200px;
+  margin: 0 auto;
+`;
+
+const HeroImageWrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16/7;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
+  box-shadow: ${({ theme }) => theme.elevation.level2};
+`;
+
+const HeroTitle = styled.h1`
+  ${({ theme }) => theme.typography.displayLarge};
+  color: ${({ theme }) => theme.colors.primary.main};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+`;
+
+const HeroSubtitle = styled.p`
+  ${({ theme }) => theme.typography.headlineMedium};
+  color: ${({ theme }) => theme.colors.neutral.main};
+  margin-bottom: ${({ theme }) => theme.spacing(4)};
+`;
+
+const CTAButton = styled.a`
+  display: inline-block;
+  background: ${({ theme }) => theme.colors.primary.main};
+  color: #fff;
+  padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(6)};
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  box-shadow: ${({ theme }) => theme.elevation.level2};
+  transition: background 0.2s;
+  cursor: pointer;
+  &:hover {
+    background: ${({ theme }) => theme.colors.primary.container};
+    color: ${({ theme }) => theme.colors.primary.main};
+  }
+`;
+
+const HelloPreview = styled.section`
+  margin: ${({ theme }) => theme.spacing(8)} 0;
+  max-width: 700px;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.neutral.main};
+  ${({ theme }) => theme.typography.bodyLarge};
+  background: ${({ theme }) => theme.colors.surface.bright};
+  border-radius: 16px;
+  box-shadow: ${({ theme }) => theme.elevation.level0};
+  padding: ${({ theme }) => theme.spacing(5)};
+  font-size: 1.25rem;
+`;
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <main>
+      <Container>
+        <HeroSection id="overview">
+        <HeroTitle>Cozumel's Premier Scuba Diving Experience</HeroTitle>
+          <HeroSubtitle>
+            Explore the world-famous reefs and caverns of Cozumel with certified, safety-focused professionals. Small groups, personalized service, and unforgettable adventures await!
+          </HeroSubtitle>
+          <HeroImageWrapper>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/header.jpg"
+              alt="KrisCros Diving Cozumel Hero"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          </HeroImageWrapper>
+          <CTAButton href="/tours">View Tours</CTAButton>
+          <HelloPreview>
+          <strong>Hello! I'm Kris, owner of KrisCros Diving.</strong><br />
+          I'm a PADI instructor, cave diver, marine biologist, and local Tulum cavern guide. I love sharing the wonder of cenote and reef diving with guests from around the world!
+          </HelloPreview>
+        </HeroSection>
+      </Container>
+    </main>
   );
 }
