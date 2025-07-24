@@ -37,6 +37,7 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroSubtitle = styled.p`
+  font-size: ${({ theme }) => theme.typography.bodyLarge}
   ${({ theme }) => theme.typography.headlineMedium};
   color: ${({ theme }) => theme.colors.neutral.main};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
@@ -49,7 +50,7 @@ const CTAButton = styled.a`
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(6)};
   border-radius: 24px;
   font-weight: 500;
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.typography.labelLarge};
   box-shadow: ${({ theme }) => theme.elevation.level2};
   transition: background 0.2s;
   cursor: pointer;
