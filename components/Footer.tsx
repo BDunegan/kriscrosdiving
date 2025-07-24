@@ -8,7 +8,7 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const FooterBar = styled.footer`
   width: 100%;
-  background: ${({ theme }) => theme.colors.primary.main};
+  background: ${({ theme }) => theme.colors.surface.bright};
   color: #fff;
   box-shadow: ${({ theme }) => theme.elevation.level1};
   padding: ${({ theme }) => theme.spacing(8)} 0;

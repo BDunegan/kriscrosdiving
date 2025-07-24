@@ -46,7 +46,7 @@ type BreakpointsType = {
 
 const theme: DefaultTheme = {
   colors: {
-    primary: { main: '#7C2AFF', container: '#EADDFF' },
+    primary: { main: '#8020cfff', container: '#EADDFF' },
     secondary: { main: '#625B71', container: '#E8DEF8' },
     tertiary: { main: '#7D5260', container: '#FFD8E4' },
     neutral: { main: '#E6E1E5', container: '#23232B' },

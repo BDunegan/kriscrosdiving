@@ -77,14 +77,14 @@ export default function Home() {
     <main>
       <Container>
         <HeroSection id="overview">
-        <HeroTitle>Cozumel's Premier Scuba Diving Experience</HeroTitle>
+        <HeroTitle>Tulum's Premier Scuba Diving Experience</HeroTitle>
           <HeroSubtitle>
-            Explore the world-famous reefs and caverns of Cozumel with certified, safety-focused professionals. Small groups, personalized service, and unforgettable adventures await!
+            Explore the world-famous reefs and caverns of Tulum with certified, safety-focused professionals. Small groups, personalized service, and unforgettable adventures await!
           </HeroSubtitle>
           <HeroImageWrapper>
             <Image
               src="/header.jpg"
-              alt="KrisCros Diving Cozumel Hero"
+              alt="KrisCros Diving Hero"
               fill
               style={{ objectFit: "cover" }}
               priority
