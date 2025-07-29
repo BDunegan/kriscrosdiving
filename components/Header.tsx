@@ -81,21 +81,6 @@ const NavLinks = styled.ul<{ open: boolean }>`
   gap: ${({ theme }) => theme.spacing(4)};
   margin: 0;
   padding: 0;
-  @media (max-width: 900px) {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 70vw;
-    background: ${({ theme }) => theme.colors.primary.container};
-    flex-direction: column;
-    align-items: flex-start;
-    padding: ${({ theme }) => theme.spacing(6)};
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-    transition: transform 0.3s ease;
-    box-shadow: ${({ theme }) => theme.elevation.level3};
-    z-index: 2000;
-  }
 `;
 
 const NavLink = styled.li<{ $active: boolean }>`
@@ -141,7 +126,7 @@ const DropdownItem = styled.li`
     display: block;
     width: 100%;
     padding: 10px 24px;
-    color: ${({ theme }) => theme.colors.primary.main};
+    color: ${({ theme }) => theme.colors.neutral.main};
     background: transparent;
     text-align: left;
     font-size: 1rem;

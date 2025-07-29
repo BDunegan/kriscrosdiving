@@ -32,12 +32,12 @@ const HeroImageWrapper = styled.div`
 
 const HeroTitle = styled.h1`
   ${({ theme }) => theme.typography.displayLarge};
-  color: ${({ theme }) => theme.colors.primary.main};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
+  color: ${({ theme }) => theme.colors.neutral.main};
 `;
 
 const HeroSubtitle = styled.p`
   font-size: ${({ theme }) => theme.typography.bodyLarge}
+  max-width: 50vw;
   ${({ theme }) => theme.typography.headlineMedium};
   color: ${({ theme }) => theme.colors.neutral.main};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
@@ -48,6 +48,7 @@ const CTAButton = styled.a`
   background: ${({ theme }) => theme.colors.primary.main};
   color: #fff;
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(6)};
+  margin: ${({ theme }) => theme.spacing(2)} 0;
   border-radius: 24px;
   font-weight: 500;
   font-size: ${({ theme }) => theme.typography.labelLarge};
@@ -61,16 +62,14 @@ const CTAButton = styled.a`
 `;
 
 const HelloPreview = styled.section`
-  margin: ${({ theme }) => theme.spacing(8)} 0;
-  max-width: 700px;
+  max-width: 50vw;
   text-align: center;
   color: ${({ theme }) => theme.colors.neutral.main};
-  ${({ theme }) => theme.typography.bodyLarge};
+  ${({ theme }) => theme.typography.headlineMedium};
   background: ${({ theme }) => theme.colors.surface.bright};
   border-radius: 16px;
   box-shadow: ${({ theme }) => theme.elevation.level0};
   padding: ${({ theme }) => theme.spacing(5)};
-  font-size: 1.25rem;
 `;
 
 export default function Home() {
@@ -92,8 +91,9 @@ export default function Home() {
             />
           </HeroImageWrapper>
           <CTAButton href="/tours">View Tours</CTAButton>
+          <CTAButton href="/training">View Training</CTAButton>
           <HelloPreview>
-          <strong>Hello! I'm Kris, owner of KrisCros Diving.</strong><br />
+          Hello! I'm Kris, owner of KrisCros Diving. <br />
           I'm a PADI instructor, cave diver, marine biologist, and local Tulum cavern guide. I love sharing the wonder of cenote and reef diving with guests from around the world!
           </HelloPreview>
         </HeroSection>

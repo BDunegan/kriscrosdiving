@@ -32,17 +32,12 @@ const Section = styled.section`
   margin: 0 auto;
 `;
 
-const SearchInput = styled.input`
-  width: 100%;
-  padding: ${({ theme }) => theme.spacing(2)};
-  margin-bottom: ${({ theme }) => theme.spacing(4)};
-  border: 1px solid ${({ theme }) => theme.colors.neutral.container};
-  border-radius: 8px;
-  font-size: 1rem;
-`;
-
 const Accordion = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.container};
+  background-color: ${({ theme }) => theme.colors.primary.main};
+  border-radius: ${({ theme }) => theme.spacing(1)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
 const AccordionHeader = styled.button<{ open: boolean }>`
@@ -53,19 +48,33 @@ const AccordionHeader = styled.button<{ open: boolean }>`
   padding: ${({ theme }) => theme.spacing(3)};
   font-size: 1.1rem;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.neutral.main};
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 `;
 
 const AccordionBody = styled.div<{ open: boolean }>`
   max-height: ${({ open }) => (open ? "200px" : "0")};
   overflow: hidden;
   transition: max-height 0.3s ease;
-  padding: ${({ open, theme }) => (open ? theme.spacing(3) : "0")};
+  padding: ${({ open, theme }) => (open ? `0 ${theme.spacing(3)} ${theme.spacing(3)}` : "0")};
   color: ${({ theme }) => theme.colors.neutral.main};
+  line-height: 1.6;
+`;
+
+const IconWrapper = styled.div<{ open: boolean }>`
+  color: ${({ theme }) => theme.colors.neutral.main};
+  transform: ${({ open }) => (open ? "rotate(180deg)" : "rotate(0deg)")};
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
 `;
 
 export default function FAQList() {
@@ -82,13 +91,6 @@ export default function FAQList() {
   return (
     <Section id="faq-list">
       <h2>Frequently Asked Questions</h2>
-      <SearchInput
-        type="text"
-        placeholder="Search FAQs..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        aria-label="Search FAQs"
-      />
       {filteredFaqs.map((faq, idx) => (
         <Accordion key={idx}>
           <AccordionHeader
@@ -98,7 +100,9 @@ export default function FAQList() {
             aria-controls={`faq-body-${idx}`}
           >
             <span>{faq.category}: {faq.question}</span>
-            <ExpandMoreIcon style={{ transform: openIdx === idx ? "rotate(180deg)" : undefined, transition: "transform 0.2s" }} />
+            <IconWrapper open={openIdx === idx}>
+              <ExpandMoreIcon />
+            </IconWrapper>
           </AccordionHeader>
           <AccordionBody open={openIdx === idx} id={`faq-body-${idx}`}>
             {faq.answer}

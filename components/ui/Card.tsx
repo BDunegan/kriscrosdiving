@@ -39,7 +39,7 @@ const CardContent = styled.div`
 
 const CardTitle = styled.h2`
   ${({ theme }) => theme.typography.headlineLarge};
-  color: ${({ theme }) => theme.colors.primary.main};
+  color: ${({ theme }) => theme.colors.neutral.main};
   margin: 0;
 `;
 
