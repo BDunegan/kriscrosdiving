@@ -3,8 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import Container from "../../components/ui/Container";
 import Cavern from "../../components/sections/tours/Cavern";
-import Reef from "../../components/sections/tours/Reef";
-import Group from "../../components/sections/tours/Group";
+import TulumReef from "../../components/sections/tours/TulumReef";
+import PlayaDelCarmenReef from "../../components/sections/tours/PlayaDelCarmenReef";
+import CozumelReef from "../../components/sections/tours/CozumelReef";
 
 const PageSurface = styled.div`
   background: ${({ theme }) => theme.colors.surface.bright};
@@ -34,11 +35,12 @@ export default function ToursPage() {
         <PageSurface>
           <PageContainer>
             <Cavern />
-            <Reef />
-            <Group />
+            <TulumReef />
+            <PlayaDelCarmenReef />
+            <CozumelReef />
           </PageContainer>
         </PageSurface>
       </Container>
     </main>
   );
-} 
+}

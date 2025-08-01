@@ -5,24 +5,54 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const faqs = [
   {
-    category: "Safety",
-    question: "Is scuba diving safe?",
-    answer: "Yes, scuba diving is very safe when proper procedures are followed. All our instructors are certified and prioritize your safety at all times.",
+    category: "General",
+    question: "What is a cenote?",
+    answer: "A cenote is a sinkhole, or an area where the limestone bedrock has naturally collapsed to expose the groundwater below. The Yucatan Peninsula contains an estimated 10,000 cenotes, many of which are accessible for snorkelers and divers to enjoy!",
   },
   {
-    category: "Equipment",
-    question: "Do I need to bring my own equipment?",
-    answer: "No, all necessary equipment is provided and included in your package. You are welcome to bring your own if you prefer.",
-  },
-  {
-    category: "Booking",
-    question: "How do I book a tour or course?",
-    answer: "You can book directly on our website or contact us for custom packages.",
+    category: "General",
+    question: "What is the difference between a cavern and a cave?",
+    answer: "A cavern is defined as being the entrance, or light zone, of a cave system. The cavern diving limit is a maximum of 60m/200ft from open water, and natural light must be visible from any point on a cavern line. A cave is any point beyond the cavern zone, out of view from natural light.",
   },
   {
     category: "Certification",
-    question: "What certifications do you offer?",
-    answer: "We offer PADI certifications from beginner to advanced levels, including specialty courses.",
+    question: "Do I need a scuba certification to cavern dive?",
+    answer: "Yes! Even if you have tried diving before, cavern safety standards do not permit non-certified individuals to dive in an overhead environment. You must complete an Open Water course and get certified before doing a cavern tour.",
+  },
+  {
+    category: "Certification",
+    question: "Do I need any special certifications to cavern dive?",
+    answer: "No! Open Water recreational divers can participate in Cavern Tours. Some cenotes are reserved for Advanced certified divers due to their depth and/or difficulty. Cavern tours do not count towards cavern certification, which requires additional formal training. Sidemount or backmount setup is also not required, single tank gear is perfectly acceptable. If you would like to dive your own sidemount or backmount equipment, please let me know in advance to ensure tank availability.",
+  },
+  {
+    category: "Logistics",
+    question: "How long will our tour last?",
+    answer: "Cavern tours typically last 5-6 hours depending on cenote location and number of divers. Open Water and Advanced course training days may last up to 8 hours depending on speed of progress and group size. Discovery Dives usually last 4 hours.",
+  },
+  {
+    category: "Logistics",
+    question: "What's included in the pricing?",
+    answer: "Tour and training prices include all rental equipment, tanks & weights, all cenote entrance and/or boat fees, transport to and from Tulum Centro, and food/water for the day. Tours lasting over 5 hours will have a full lunch provided, otherwise snacks will be provided. Additional cenote GoPro/camera fees are not included in pricing, and Nitrox may be requested for an additional $5 USD per tank. Restrictions may apply to Group Trips.",
+  },
+  {
+    category: "Logistics",
+    question: "How many divers will be joining?",
+    answer: "The maximum group size for cavern tours is 4 divers. I maintain this limit for certification training and discovery dives as well, to ensure quality attention and personalized service.",
+  },
+  {
+    category: "Experience",
+    question: "What's the best cenote to visit?",
+    answer: "All of them! It's difficult to choose a favorite cenote as they each offer their own special formations and features. Whether you're seeking amazing light displays, mystical hydrogen sulfide layers, fascinating aquatic life, or ancient Mayan artifacts, every site contains unique wonders. Let me know what you're most excited about experiencing and I can customize the perfect cavern combination.",
+  },
+  {
+    category: "Experience",
+    question: "Can I dive in both the ocean and the cenotes?",
+    answer: "While it's always a possibility, I highly recommend that certified divers embrace the once-in-a-lifetime opportunity of Cavern Tours while in Tulum. The world has lots of ocean sites to offer, but very limited scuba-accessible caverns. Plus, gloomy weather will never affect our ability to cavern dive- no overpowering currents or canceled boats, and minimal impact on visibility. The Yucatan peninsula is unique in providing so many recreational cavern sites, you don't want to miss out!",
+  },
+  {
+    category: "Advanced",
+    question: "Can we go further into the cave?",
+    answer: "Only if you're cave certified! The Yucatan peninsula is home to several of the world's longest flooded cave systems, meaning there's endless kilometers of underwater cave to explore. Cave training is an extensive process requiring proficiency on a dual-tank configuration, expertise with buoyancy, trim and positioning, and mastery of safety drills and navigation skills. For more information on guided cave dives or cave training, please Contact Kristin directly.",
   },
 ];
 
@@ -99,7 +129,7 @@ export default function FAQList() {
             aria-expanded={openIdx === idx}
             aria-controls={`faq-body-${idx}`}
           >
-            <span>{faq.category}: {faq.question}</span>
+            <span>{faq.question}</span>
             <IconWrapper open={openIdx === idx}>
               <ExpandMoreIcon />
             </IconWrapper>
@@ -111,4 +141,4 @@ export default function FAQList() {
       ))}
     </Section>
   );
-} 
+}

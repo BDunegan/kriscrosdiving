@@ -77,8 +77,9 @@ export default function Home() {
     <main>
       <Container>
         <HeroSection id="overview">
-        <HeroTitle>Tulum's Premier Scuba Diving Experience</HeroTitle>
+        <HeroTitle>Kris Cros Diving</HeroTitle>
           <HeroSubtitle>
+            Tulum's Premier Scuba Diving Experience <br />
             Explore the world-famous reefs and caverns of Tulum with certified, safety-focused professionals. Small groups, personalized service, and unforgettable adventures await!
           </HeroSubtitle>
           <HeroImageWrapper>
@@ -93,8 +94,9 @@ export default function Home() {
           <CTAButton href="/tours">View Tours</CTAButton>
           <CTAButton href="/training">View Training</CTAButton>
           <HelloPreview>
-          Hello! I'm Kris, owner of KrisCros Diving. <br />
-          I'm a PADI instructor, cave diver, marine biologist, and local Tulum cavern guide. I love sharing the wonder of cenote and reef diving with guests from around the world!
+            Kris Cros Diving is a woman-owned dive operation based in Tulum, Mexico. 
+            We offer personalized scuba excursions including cenote Cavern Tours, PADI Training courses, and guided Reef Dives. 
+            Small group sizes and tailor-made tour packages will make your Mexican dive trip unforgettable. So what are you waiting for, let's dive in!
           </HelloPreview>
         </HeroSection>
       </Container>

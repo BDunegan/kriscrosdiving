@@ -7,7 +7,6 @@ import Reviews from "../../components/sections/about/Reviews";
 
 const PageSurface = styled.div`
   background: ${({ theme }) => theme.colors.surface.bright};
-  /* border-radius: 24px; */
   box-shadow: ${({ theme }) => theme.elevation.level1};
   padding: ${({ theme }) => theme.spacing(8)} 0;
   min-height: 100vh;
@@ -64,11 +63,11 @@ export default function AboutPage() {
             <Reviews />
             <HeadshotWrapper>
               <Headshot>
-                <Image src="/kris.jpeg" alt="Kris headshot" width={96} height={96} style={{ objectFit: "cover", width: '100%', height: '100%' }} />
+                <Image src="/kris.jpeg" alt="Kristin headshot" width={96} height={96} style={{ objectFit: "cover", width: '100%', height: '100%' }} />
               </Headshot>
             </HeadshotWrapper>
             <StorySection>
-              <h2>About Kris</h2>
+              <h2>Hi, I'm Kristin!</h2>
               <StoryText>
                 I'm a PADI instructor, cave diver, marine biologist, and local Tulum cavern guide. I'm originally from Boston, MA but have lived and dived many places. I've been fortunate to call Tulum home for the past three years.<br /><br />
                 My diving journey first began in 2009, when I completed my Open Water course while studying Marine Biology in college. Since then, scuba diving has allowed me to work many exciting jobs across the globe, including being an aquarium diver in San Diego, a purser on a liveaboard boat in Australia, and a Divemaster in Koh Tao, Thailand.<br /><br />
@@ -76,9 +75,14 @@ export default function AboutPage() {
                 The cenotes of the Riviera Maya are such a unique environment, full of fascinating geological formations and breathtaking light displays. I would love to share the wonder of cenote diving with you. Reach out today to start planning your dream dive vacation!
               </StoryText>
             </StorySection>
+            <StorySection>
+              <StoryText>
+                Contact me at my email: info@kriscrosdiving.com or my instagram: <a href="https://www.instagram.com/kriscrosdiving" target="_blank" rel="noopener noreferrer">@kriscrosdiving</a> to book your next dive adventure!
+              </StoryText>
+            </StorySection>
           </PageContainer>
         </PageSurface>
       </Container>
     </main>
   );
-} 
+}

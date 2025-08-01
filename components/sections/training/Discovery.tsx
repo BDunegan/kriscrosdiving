@@ -6,13 +6,19 @@ export default function Discovery() {
   return (
     <section id="discovery">
       <Card
-        title="Discovery Diving"
+        title="PADI Discovery Dive"
         image="/discovery.jpg"
-        description="Perfect for beginners! Try scuba diving in a safe, controlled environment with a certified instructor. No experience required."
-        details={["Price: $90 USD", "Duration: Half day", "Includes: Equipment, instruction"]}
+        description="Find out what it feels like to have gills! On a Discovery Dive, you'll learn the basic skills of scuba diving and go for a shallow dive in the open water of Casa Cenote. This is a great way to experience scuba diving without the financial and time commitment of a full certification course. To learn more about getting scuba certified, check out the Open Water Course."
+        details={[
+          "Price: $160 USD per diver",
+          "Group rates available upon request", 
+          "Duration: Half day experience",
+          "Location: Casa Cenote",
+          "Includes: Full scuba rental equipment, tanks & weights, cenote entrance fees, transportation to and from Tulum Centro, and snacks/drinks for the day"
+        ]}
         ctaLabel="Book Discovery Dive"
-        ctaHref="/contact?type=discovery"
+        ctaHref="/about"
       />
     </section>
   );
-} 
+}
