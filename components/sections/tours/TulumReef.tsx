@@ -7,7 +7,7 @@ export default function TulumReef() {
     <section id="tulum-reef">
       <Card
         title="Tulum Reef Tours"
-        image="/cros.jpg"
+        image="/Tulum_reef.jpeg"
         description="Tulum has several calm, shallow dive sites that are perfect for recreational training or a guided tour. Just a 10 min boat ride from the shore, this is the fastest way to explore the Mesoamerican Barrier reef! Student divers on both the Open Water and Advanced courses will enjoy gliding over soft corals and cruising around rock arches surrounded by thriving fish and invertebrate populations."
         details={[
           "Price: $200 USD per diver", 
@@ -16,7 +16,7 @@ export default function TulumReef() {
           "Includes: Full scuba rental equipment, tanks & weights, boat fees, transportation to and from Tulum Centro, and lunch/drinks for the day"
         ]}
         ctaLabel="Book Tulum Reef Dive"
-        ctaHref="/about"
+        ctaHref="https://www.google.com/url?q=https%3A%2F%2Fwa.link%2F4s58oz&sa=D&sntz=1&usg=AOvVaw12MK85PHQELT-M1RyaqNC_"
       />
     </section>
   );

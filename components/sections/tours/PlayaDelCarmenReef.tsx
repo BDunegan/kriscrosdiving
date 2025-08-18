@@ -7,7 +7,7 @@ export default function PlayaDelCarmenReef() {
     <section id="playa-reef">
       <Card
         title="Playa del Carmen Reef Tours"
-        image="/discovery.jpg"
+        image="/Playa2.jpeg"
         description="Centrally located between Tulum and Cancun, Playa del Carmen offers the thrill of drift diving while navigating reefs and wrecks. Dive sites often host large pelagic species (sharks, rays, and turtles) because of the strong current of the Gulf Stream. November-February there is also an opportunity to dive with bull sharks, as large numbers of pregnant female bull sharks occupy the warm coastal waters around the city!"
         details={[
           "Price: $200 USD per diver", 
@@ -17,7 +17,7 @@ export default function PlayaDelCarmenReef() {
           "Includes: Full scuba rental equipment, tanks & weights, boat fees, transportation to and from Tulum Centro, and lunch/drinks for the day"
         ]}
         ctaLabel="Book Playa del Carmen Dive"
-        ctaHref="/contact?type=playa-reef"
+        ctaHref="https://www.google.com/url?q=https%3A%2F%2Fwa.link%2F4s58oz&sa=D&sntz=1&usg=AOvVaw12MK85PHQELT-M1RyaqNC_"
       />
     </section>
   );

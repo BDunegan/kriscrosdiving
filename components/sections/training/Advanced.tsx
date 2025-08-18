@@ -7,7 +7,7 @@ export default function Advanced() {
     <section id="advanced">
       <Card
         title="PADI Advanced Open Water Course"
-        image="/advanced.jpeg"
+        image="/thepit.jpg"
         description="Improve your scuba skills and explore new depths by getting your PADI advanced certification! In this 2-day course, you will expand your diving knowledge and experience by completing 5 specialty dives, including a deep, a navigation, a peak performance buoyancy, and 2 unique specialty dives."
         details={[
           "Pricing: 1 student - $475 USD | 2 students - $450 USD | 3-4 students - $425 USD per diver",
@@ -17,7 +17,7 @@ export default function Advanced() {
           "Note: Pricing does not include required PADI academic materials"
         ]}
         ctaLabel="Book Advanced Course"
-        ctaHref="/about"
+        ctaHref="https://www.google.com/url?q=https%3A%2F%2Fwa.link%2F4s58oz&sa=D&sntz=1&usg=AOvVaw12MK85PHQELT-M1RyaqNC_"
       />
     </section>
   );

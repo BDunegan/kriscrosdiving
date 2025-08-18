@@ -20,28 +20,67 @@ const FooterContent = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(2)};
-  @media (min-width: 900px) {
+  align-items: center;
+  text-align: center;
+  gap: ${({ theme }) => theme.spacing(3)};
+  
+  @media (min-width: 600px) {
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
+  
+  @media (min-width: 600px) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
   }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(2)};
+  
+  a {
+    color: ${({ theme }) => theme.colors.neutral.main};
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary.main};
+    }
+  }
 `;
 
 const QuickLinks = styled.div`
   display: flex;
   gap: ${({ theme }) => theme.spacing(3)};
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  @media (min-width: 600px) {
+    justify-content: flex-start;
+  }
+  
+  a {
+    color: ${({ theme }) => theme.colors.neutral.main};
+    text-decoration: none;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: ${({ theme }) => theme.colors.primary.main};
+    }
+  }
 `;
 
 const Contact = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: ${({ theme }) => theme.spacing(1)};
+  color: ${({ theme }) => theme.colors.neutral.main};
+  
+  @media (min-width: 600px) {
+    justify-content: flex-start;
+  }
 `;
 
 export default function Footer() {
@@ -66,4 +105,4 @@ export default function Footer() {
       </FooterContent>
     </FooterBar>
   );
-} 
+}

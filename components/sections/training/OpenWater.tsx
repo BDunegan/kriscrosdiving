@@ -7,7 +7,7 @@ export default function OpenWater() {
     <section id="open-water">
       <Card
         title="PADI Open Water Course"
-        image="/openwater.jpeg"
+        image="/openWater.jpeg"
         description="Learn how to scuba dive in just 3 days! To complete your PADI Open Water course, you'll spend a day learning and practicing basic skills in one of Tulum's clear, freshwater cenotes. Then you'll prove your mastery by completing 4 open water dives in either the cenotes, the ocean, or both!"
         details={[
           "Pricing: 1 student - $600 USD | 2 students - $550 USD | 3-4 students - $500 USD per diver",
@@ -17,7 +17,7 @@ export default function OpenWater() {
           "Note: Pricing does not include required PADI academic materials"
         ]}
         ctaLabel="Book Open Water"
-        ctaHref="/about"
+        ctaHref="https://www.google.com/url?q=https%3A%2F%2Fwa.link%2F4s58oz&sa=D&sntz=1&usg=AOvVaw12MK85PHQELT-M1RyaqNC_"
       />
     </section>
   );

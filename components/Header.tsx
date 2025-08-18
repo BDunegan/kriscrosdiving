@@ -67,20 +67,44 @@ const Nav = styled.nav`
   padding: ${({ theme }) => theme.spacing(4)};
   position: relative;
   z-index: 1;
+  
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
 const Logo = styled.div`
   font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: 2px;
+  
+  @media (max-width: 600px) {
+    font-size: 1.75rem;
+    margin-bottom: ${({ theme }) => theme.spacing(2)};
+  }
 `;
 
-const NavLinks = styled.ul<{ open: boolean }>`
+const NavLinks = styled.ul<{ $open: boolean }>`
   list-style: none;
   display: flex;
   gap: ${({ theme }) => theme.spacing(4)};
   margin: 0;
   padding: 0;
+  
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing(1)};
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: ${({ theme }) => theme.spacing(2)};
+    margin-top: ${({ theme }) => theme.spacing(1)};
+    display: ${({ $open }) => ($open ? 'flex' : 'none')};
+  }
 `;
 
 const NavLink = styled.li<{ $active: boolean }>`
@@ -101,6 +125,17 @@ const NavLink = styled.li<{ $active: boolean }>`
     align-items: center;
     gap: 4px;
   }
+  
+  @media (max-width: 600px) {
+    width: 100%;
+    text-align: center;
+    
+    a {
+      justify-content: center;
+      width: 100%;
+      padding: ${({ theme }) => theme.spacing(1.5)} ${({ theme }) => theme.spacing(2)};
+    }
+  }
 `;
 
 const Dropdown = styled.ul`
@@ -118,6 +153,16 @@ const Dropdown = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0;
+  
+  @media (max-width: 600px) {
+    position: static;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin-top: ${({ theme }) => theme.spacing(1)};
+    box-shadow: none;
+  }
 `;
 
 const DropdownItem = styled.li`
@@ -138,6 +183,19 @@ const DropdownItem = styled.li`
       color: ${({ theme }) => theme.colors.primary.main};
     }
   }
+  
+  @media (max-width: 600px) {
+    a {
+      color: #fff;
+      text-align: center;
+      padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+      }
+    }
+  }
 `;
 
 const Hamburger = styled.button`
@@ -146,19 +204,43 @@ const Hamburger = styled.button`
   border: none;
   color: inherit;
   cursor: pointer;
-  @media (max-width: 900px) {
+  font-size: 2rem;
+  
+  @media (max-width: 600px) {
     display: block;
-    font-size: 2rem;
   }
 `;
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Close dropdown on mouse leave
-  const handleDropdownLeave = () => setDropdownOpen(null);
+  // Check if we're on mobile
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Close dropdown on mouse leave (desktop only)
+  const handleDropdownLeave = () => {
+    if (!isMobile) {
+      setDropdownOpen(null);
+    }
+  };
+
+  // Handle mouse enter (desktop only)
+  const handleDropdownEnter = (href: string) => {
+    if (!isMobile) {
+      setDropdownOpen(href);
+    }
+  };
 
   return (
     <HeaderBar>
@@ -172,24 +254,28 @@ export default function Header() {
         >
           {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </Hamburger>
-        <NavLinks open={menuOpen}>
+        <NavLinks $open={menuOpen}>
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
               (link.href !== "/" && pathname.startsWith(link.href));
             const hasDropdown = link.anchors && link.anchors.length > 0;
+            const shouldShowDropdown = hasDropdown && (
+              isMobile || dropdownOpen === link.href
+            );
+            
             return (
               <NavLink
                 key={link.href}
                 $active={isActive}
-                onMouseEnter={() => hasDropdown && setDropdownOpen(link.href)}
+                onMouseEnter={() => hasDropdown && handleDropdownEnter(link.href)}
                 onMouseLeave={handleDropdownLeave}
               >
                 <Link href={link.href} onClick={() => setMenuOpen(false)}>
                   {link.label}
                   {hasDropdown && <ExpandMoreIcon style={{ fontSize: 18, marginLeft: 2 }} />}
                 </Link>
-                {hasDropdown && dropdownOpen === link.href && (
+                {shouldShowDropdown && (
                   <Dropdown>
                     {link.anchors.map((anchor) => (
                       <DropdownItem key={anchor.href}>

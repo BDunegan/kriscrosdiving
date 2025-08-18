@@ -36,9 +36,8 @@ const HeroTitle = styled.h1`
 `;
 
 const HeroSubtitle = styled.p`
-  font-size: ${({ theme }) => theme.typography.bodyLarge}
+  font-size: calc(1rem + 1vw);
   max-width: 50vw;
-  ${({ theme }) => theme.typography.headlineMedium};
   color: ${({ theme }) => theme.colors.neutral.main};
   margin-bottom: ${({ theme }) => theme.spacing(4)};
 `;
@@ -62,10 +61,10 @@ const CTAButton = styled.a`
 `;
 
 const HelloPreview = styled.section`
+  font-size: calc(1rem + 1vw);
   max-width: 50vw;
   text-align: center;
   color: ${({ theme }) => theme.colors.neutral.main};
-  ${({ theme }) => theme.typography.headlineMedium};
   background: ${({ theme }) => theme.colors.surface.bright};
   border-radius: 16px;
   box-shadow: ${({ theme }) => theme.elevation.level0};
@@ -80,7 +79,7 @@ export default function Home() {
         <HeroTitle>Kris Cros Diving</HeroTitle>
           <HeroSubtitle>
             Tulum's Premier Scuba Diving Experience <br />
-            Explore the world-famous reefs and caverns of Tulum with certified, safety-focused professionals. Small groups, personalized service, and unforgettable adventures await!
+            Explore the world-famous caverns and reefs of Tulum with certified, safety-focused professionals. Small groups, personalized service, and unforgettable adventures await!
           </HeroSubtitle>
           <HeroImageWrapper>
             <Image
